@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sale">
     {{ props.sale.sale }} % скидка
   </div>
 </template>
