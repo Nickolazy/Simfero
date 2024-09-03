@@ -8,12 +8,12 @@
       <ul class="header-list">
         <li class="header-item">
           <button class="button-header">
-            <img src="@/assets/svg/icon-search.svg" alt="Search">
+            <img src="@/assets/svg/icons/icon-search.svg" alt="Search">
           </button>
         </li>
         <li class="header-item">
           <button class="button-header">
-            <img src="@/assets/svg/icon-store.svg" alt="Store">
+            <img src="@/assets/svg/icons/icon-store.svg" alt="Store">
           </button>
         </li>
       </ul>

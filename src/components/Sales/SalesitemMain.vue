@@ -2,7 +2,7 @@
 	<button class="sales-item-container">
     <div>
       <div class="sales-item-sale">
-        {{ props.sale.sale }} % скидка
+        <SaleBlock :sale="props.sale"/>
       </div>
       <div class="sales-item-box">
         <img :src="props.sale.img" alt="MenuItem">
@@ -15,9 +15,11 @@
 </template>
   
 <script setup lang="ts">
+  import SaleBlock from './SaleBlock.vue';
   import { defineProps } from 'vue';
 
   interface SalesItem {
+    id: number,
     name: string,
     sale: number,
     img: string;

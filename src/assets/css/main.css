@@ -91,7 +91,7 @@
 
     background: 
       linear-gradient(to top, var(--color-darkGray) 50%, rgba(0, 0, 0, 0) 100%) bottom left,
-      url('@/assets/img/bg-hello.jpg') top left / 100% auto no-repeat;
+      url('@/assets/img/hello-section/bg-hello.jpg') top left / 100% auto no-repeat;
 
 		color: var(--color-white);
   }
@@ -376,3 +376,40 @@
   .scroll-button.right {
     right: 10px;
   }
+
+  /* Бизнес Ланч */
+  .businessLunch-main-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .businessLunch-item-container {
+    max-width: 400px;
+    max-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+
+    font-size: 30px;
+  }
+
+  .businessLunch-item-container:hover {
+    transform: scale(1.05);
+  }
+
+  .businessLunch-item-container:active {
+    transform: scale(1);
+  }
+
+  .businessLunch-item-container img {
+    max-width: 350px;
+    max-height: 250px;
+
+    border-radius: 20px;
+  }
+
+  /* Рекомендации для вас*/

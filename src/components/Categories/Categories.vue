@@ -20,7 +20,7 @@
   </section>
 </template>
   
-<script setup>
+<script setup lang="ts">
   import CategoryItemMain from './CategoryItemMain.vue';
   import { useDataStore } from '@/store/MenuStore';
 

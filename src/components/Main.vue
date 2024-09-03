@@ -7,6 +7,8 @@
     <main class="main">
       <Categories />
       <Sales />
+      <BusinessLunch />
+      <Recomendations />
     </main>
   </div>
 </template>
@@ -18,6 +20,8 @@
   import Header from './Header.vue';
   import Categories from './Categories/Categories.vue';
   import Sales from './Sales/Sales.vue';
+  import BusinessLunch from './BusinessLunch/BusinessLunch.vue';
+  import Recomendations from './Recomendations.vue';
 
   const helloOpened = ref(true);
 

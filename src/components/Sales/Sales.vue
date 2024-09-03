@@ -16,7 +16,7 @@
         <div class="sales-main-items" ref="scrollContainer">
           <SalesitemMain 
             v-for="sale in sales" 
-            :key="sale.name" 
+            :key="sale.id"
             :sale="sale" 
           />
         </div>
@@ -29,14 +29,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import SalesitemMain from './SalesitemMain.vue';
+import { ref } from 'vue';
 import { useDataStore } from '@/store/MenuStore';
 
 const dataStore = useDataStore();
 const menu = dataStore.menu;
 
 interface SalesItem {
+  id: number,
   name: string;
   composition: string;
   description: string;
