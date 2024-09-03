@@ -74,9 +74,14 @@
     list-style-type: none;
   }
 
-  section{
+  section {
     width: 100%;
   }
+
+  main {
+    margin-top: 140px;
+  }
+
 
   .container {
     max-width: var(--container-width);
@@ -153,6 +158,11 @@
 
     background-color: var(--color-darkGray);
     border-radius: 0 0 25px 25px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
 
   .container-header-flex {
@@ -175,6 +185,18 @@
 
     -webkit-user-select: none;
     user-select: none;
+  }
+
+  .header-item {
+    position: relative;
+  }
+
+  .header-store-rect {
+    max-width: 12px;
+    position: absolute;
+
+    top: -8px;
+    right: -12px;
   }
 
   /* Категории */

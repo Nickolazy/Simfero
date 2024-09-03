@@ -13,8 +13,13 @@
         </li>
         <li class="header-item">
           <button class="button-header">
-            <img src="@/assets/svg/icons/icon-store.svg" alt="Store">
+            <img 
+              src="@/assets/svg/icons/icon-store.svg" 
+              alt="Store">
           </button>
+          <img v-if="isBasketFull" 
+              class="header-store-rect"
+              src="@/assets/svg/rect.svg">
         </li>
       </ul>
     </div>
@@ -22,7 +27,14 @@
 </template>
   
 <script setup lang="ts">
-  
+  import { useDataStore } from '@/store/MenuStore';
+  import { computed } from 'vue';
+
+  const dataStore = useDataStore(); 
+
+  const isBasketFull = computed(() => {
+    return dataStore.basket[0];
+  });
 </script>
   
 <style scoped>
