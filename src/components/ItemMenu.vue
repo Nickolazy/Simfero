@@ -1,6 +1,6 @@
 <template>
   <div class="container-menu-item">
-    <div class="menu-item-margin">
+    <button class="menu-item-margin">
       <SaleBlock v-if="menuItem.sale > 0" 
         class="sales-item-sale"
         :sale="menuItem"/>
@@ -38,7 +38,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </button>
   </div>
 </template>
 

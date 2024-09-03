@@ -6,7 +6,7 @@
     <div class="container">
     <div class="recomendations-main-items">
       <ItemMenu 
-        v-for="item in filteredMenuItems"
+        v-for="item in menuItems"
         :key="item.id" 
         :menuItem="item"
         />
@@ -31,9 +31,9 @@
     categoryName: string;
   }>();
 
-  const filteredMenuItems = computed(() => {
-    return menuItems.filter(item => item.category === props.categoryName);
-  });
+  // const filteredMenuItems = computed(() => {
+  //   return menuItems.filter(item => item.category === props.categoryName);
+  // });
 
   
   const nameOfSection = props.categoryName;

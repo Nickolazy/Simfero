@@ -94,3 +94,23 @@
   font-size: 30px;
   color: var(--color-white);
 }
+
+.sales-items-side-flex {
+  /* display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 60px; */
+
+  /* column-gap: 10px;
+  row-gap: 70px; */
+
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  row-gap: 70px;
+
+}
+
+.sales-items-side-flex > :nth-child(n) {
+  justify-self: center;
+}

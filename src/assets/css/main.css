@@ -288,7 +288,7 @@
   }
 
   .sales-item-container:active {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 
   .sales-item-sale {
@@ -443,7 +443,7 @@
   }
 
   .businessLunch-item-container:active {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 
   .businessLunch-item-container img {
@@ -478,6 +478,14 @@
 
   .menu-item-margin {
     margin-top: auto;
+  }
+
+  .menu-item-margin:hover {
+    transform: scale(1.03);
+  }
+
+  .menu-item-margin:active {
+    transform: scale(1.03);
   }
 
   .menu-item-block {
@@ -563,6 +571,10 @@
     color: #868686;
 
     margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 
   .menu-item-text-block-title {
