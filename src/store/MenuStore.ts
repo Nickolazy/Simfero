@@ -27,8 +27,10 @@ import imgLeroiBig from '@/assets/img/menu/Лерой Большой.png';
 interface BasketItem {
   id: number;
   name: string;
+  composition: string;
   amount: number;
   price: number;
+  img: string;
 }
 
 export const useDataStore = defineStore('data', {
@@ -276,6 +278,7 @@ export const useDataStore = defineStore('data', {
         });
       }
     },
+
     removeFromBasket(id: number) {
       const existingItem = this.basket.find(item => item.id === id);
 
@@ -288,6 +291,14 @@ export const useDataStore = defineStore('data', {
           existingItem.price -= existingItem.price / (existingItem.amount + 1);
         }
       }
+    },
+
+    parseBasketItems() {
+      return this.basket;
+    },
+
+    calculateTotal() {
+      return this.basket.reduce((total, item) => total + item.price, 0);
     }
   },
 });

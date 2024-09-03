@@ -81,8 +81,10 @@
     dataStore.addToBasket({
       id: menuItem.id,
       name: menuItem.name,
+      composition: menuItem.composition,
       amount: 1,
-      price: menuItem.cost
+      price: menuItem.cost,
+      img: menuItem.img
     });
   }
 

@@ -12,7 +12,7 @@
           </button>
         </li>
         <li class="header-item">
-          <button class="button-header">
+          <button @click="openStore" class="button-header">
             <img 
               src="@/assets/svg/icons/icon-store.svg" 
               alt="Store">
@@ -29,12 +29,18 @@
 <script setup lang="ts">
   import { useDataStore } from '@/store/MenuStore';
   import { computed } from 'vue';
+  import { useRouter } from 'vue-router';
 
-  const dataStore = useDataStore(); 
+  const dataStore = useDataStore();
+  const router = useRouter(); 
 
   const isBasketFull = computed(() => {
     return dataStore.basket[0];
   });
+
+  const openStore = () => {
+    router.push({ name: 'store' });
+  }
 </script>
   
 <style scoped>

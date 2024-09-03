@@ -16,8 +16,8 @@
   
 <script setup lang="ts">
   import HeaderSide from '../HeaderSide.vue';
-  import { useRouter } from 'vue-router';
   import CategoryItem from './CategoryItem.vue';
+  import { useRouter } from 'vue-router';
   import { useDataStore } from '@/store/MenuStore';
 
   const dataStore = useDataStore();

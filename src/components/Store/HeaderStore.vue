@@ -10,15 +10,15 @@
             {{ props.nameOfSection }}
           </h1>
         </div>
-        <div class="store-header-side">
-          <button @click="openStore" class="button-header-side">
+        <div class="store-header-side-store">
+          <button class="button-header-side-clear">
+            Очистить
+          </button>
+          <button @click="handleClose" class="button-header-side-store">
             <img 
-              src="@/assets/svg/icons/icon-store-black.svg" 
+              src="@/assets/svg/icons/icon-clear.svg" 
               alt="Store">
           </button>
-          <img v-if="isBasketFull" 
-            class="header-store-rect-side"
-            src="@/assets/svg/rect.svg">
         </div>
       </div>
     </div>
@@ -29,10 +29,8 @@
   import { useDataStore } from '@/store/MenuStore';
   import { computed } from 'vue';
   import { defineProps } from 'vue';
-  import { useRouter } from 'vue-router';
 
   const dataStore = useDataStore(); 
-  const router = useRouter();
 
   const isBasketFull = computed(() => {
     return dataStore.basket[0];
@@ -49,10 +47,6 @@
   const handleClose = () => {
     emit('close');
   };
-
-  const openStore = () => {
-    router.push({ name: 'store' });
-  }
 </script>
 
 <style scoped>
