@@ -306,44 +306,60 @@
     border-radius: 15px;
 
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 
   .sales-item-box {
     max-width: 400px;
     height: auto;
 
+    position: relative;
     margin-left: 15px;
-
     border-radius: 15px;
   }
-
-  .sales-item-box img{
+  
+  .sales-item-box::before {
+    width: 100%;
+    height: 126%;
+    
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    z-index: 1; 
+  }
+  
+  .sales-item-box img {
     max-width: 400px;
     height: auto;
-
     margin-top: -22px;
     position: relative;
     z-index: 0;
     border-radius: 15px;
   }
-
-  .sales-item-box p{
+  
+  .sales-item-box p {
     margin-top: -80px;
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
-    color: var(--color-black);
-
+    color: var(--color-white);
     position: relative;
-    z-index: 1;
-
+    z-index: 2;
     text-align: start;
   }
 
   .sales-main-container {
 
   }
+
+  .sale {
+    position: relative;
+    z-index: 10;
+  }
+
   
   .sales-main {
     display: flex;
@@ -382,7 +398,7 @@
     border-radius: 50%;
     font-size: 32px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 
     display: flex;
     align-items: center;
@@ -460,26 +476,27 @@
     flex-direction: column;
   }
 
-  .sale {
-    z-index: 2;
-  }
-
   .menu-item-margin {
     margin-top: auto;
   }
 
   .menu-item-block {
     max-width: 300px;
+    
 
     margin-top: -22px;
     margin-left: 10px;
 
-    position: relative; /* Позволяет псевдоэлементу позиционироваться относительно этого блока */
-  display: inline-block; /* Необходим для корректного отображения псевдоэлемента */
+    position: relative;
+    display: inline-block;
+  }
+
+  .menu-item-img-block-position {
+    
   }
 
   .menu-item-img-block img {
-    display: block; /* Убирает пробелы под изображением */
+    display: block; 
     max-width: 100%;
     height: auto;
     position: relative;
@@ -611,5 +628,4 @@
 
     border-radius: 50px;
   }
-
 

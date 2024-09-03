@@ -5,7 +5,7 @@
         <h1>
           Бизнес Ланч
         </h1>
-        <button class="main-button">
+        <button @click="goToAll" class="main-button">
           Смотреть все
         </button>
       </div>
@@ -23,9 +23,15 @@
 <script setup lang="ts">
   import BusinessLunchItemMain from './BusinessLunchItemMain.vue';
   import { useDataStore } from '@/store/MenuStore';
+  import { useRouter } from 'vue-router';
 
   const dataStore = useDataStore();
   const daysOfWeek = dataStore.businessLunch;
+  const router = useRouter();
+
+  const goToAll = () => {
+  router.push({ name: 'businessLunch'});
+}
 
 </script>
   

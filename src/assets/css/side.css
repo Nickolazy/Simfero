@@ -1,0 +1,96 @@
+/* Шапка */
+.side-container {
+  margin-top: 20px;
+}
+
+.side-title {
+  display: flex;
+  align-items: center;
+  
+  column-gap: 30px;
+}
+
+.side-title h1 {
+  font-size: 50px;
+}
+
+.side-title img {
+  width: 20px;
+  height: auto;
+}
+
+.side-title-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2rem;
+  margin-bottom: 30px;
+}
+
+.store-header-side{
+  position: relative;
+}
+
+.button-header-side img{
+  width: 30px;
+  height: auto;
+}
+
+.header-store-rect-side{
+  width: 13px;
+  height: auto;
+
+  position: absolute;
+  top: -8px;
+  right: -12px;
+}
+
+/* Главная страница категорий */
+.category-items-side-section {
+  margin-bottom: 50px;
+}
+
+.category-items-side-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+
+  column-gap: 10px;
+  row-gap: 70px;
+}
+
+.category-item-side-button {
+  width: 350px;
+  height: auto;
+
+  position: relative;
+}
+
+.category-item-side-button:hover{
+  transform: scale(1.05);
+}
+
+.category-item-side-button:active{
+  transform: scale(1);
+}
+
+.category-item-side-button img {
+  width: 100%;
+  height: auto;
+}
+
+.category-item-side-button p {
+  position: absolute;
+  inset: 0;
+
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  font-size: 30px;
+  color: var(--color-white);
+}

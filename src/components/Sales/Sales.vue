@@ -5,7 +5,7 @@
         <h1> 
           Акционные товары
         </h1>
-        <button class="main-button"> 
+        <button @click="goToAll" class="main-button"> 
           Смотреть все
         </button>
       </div>
@@ -32,9 +32,11 @@
 import SalesitemMain from './SalesitemMain.vue';
 import { ref } from 'vue';
 import { useDataStore } from '@/store/MenuStore';
+import { useRouter } from 'vue-router';
 
 const dataStore = useDataStore();
 const menu = dataStore.menu;
+const router = useRouter();
 
 interface SalesItem {
   id: number,
@@ -72,6 +74,10 @@ const scrollRight = () => {
     });
   }
 };
+
+const goToAll = () => {
+  router.push({ name: 'sales'});
+}
 
 </script>
 

@@ -12,12 +12,26 @@ const router = createRouter({
     {
       path: '/categories',
       name: 'categories',
-      component: () => import('@/components/Categories/CategoriesAll.vue')
+      component: () => import('@/components/Categories/CategoriesAll.vue'),
+    },
+    {
+      path: '/categories/:categoryPath',
+      name: 'category-page',
+      component: () => import('@/components/Categories/CategoryPage.vue'),
+      props: route => ({
+        categoryPath: route.params.categoryPath,
+        categoryName: route.query.categoryName
+      })
     },
     {
       path: '/sales',
       name: 'sales',
-      component: () => import('@/components/Sales/Sales.vue')
+      component: () => import('@/components/Sales/SalesAll.vue')
+    },
+    {
+      path: '/businessLunch',
+      name: 'businessLunch',
+      component: () => import('@/components/BusinessLunch/BusinessLunchAll.vue')
     },
     {
       path: '/search',
