@@ -1,5 +1,5 @@
 <template>
-	<button class="sales-item-container">
+	<button @click="goToProductCard" class="sales-item-container">
     <div>
       <div class="sales-item-sale">
         <SaleBlock :sale="props.sale"/>
@@ -17,6 +17,8 @@
 <script setup lang="ts">
   import SaleBlock from './SaleBlock.vue';
   import { defineProps } from 'vue';
+  import { useRouter } from 'vue-router';
+  import { useDataStore } from '@/store/MenuStore';
 
   interface SalesItem {
     id: number,
@@ -25,9 +27,40 @@
     img: string;
   }
 
+  interface MenuItem {
+    id: number,
+    name: string;
+    composition: string;
+    description: string;
+    category: string;
+    weight: number;
+    cookTime: number;
+    mark: number;
+    sale: number;
+    cost: number;
+    img: string;
+  }
+
   const props = defineProps<{
     sale: SalesItem;
+    menuItem: MenuItem;
   }>();
+
+  const dataStore = useDataStore();
+  const router = useRouter();
+  
+  const goToProductCard = () => {
+    router.push({
+      name: 'product-page', 
+      params: { 
+        productName: props.menuItem.name,
+      },
+      query: {
+        productId: props.menuItem.id.toString()
+      }
+    });
+  }
+
 </script>
   
 <style scoped>

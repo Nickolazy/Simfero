@@ -11,7 +11,7 @@
           </h1>
         </div>
         <div class="store-header-side-store">
-          <button class="button-header-side-clear">
+          <button @click="clearStore" class="button-header-side-clear">
             Очистить
           </button>
           <button @click="handleClose" class="button-header-side-store">
@@ -27,14 +27,9 @@
 
 <script setup lang="ts">
   import { useDataStore } from '@/store/MenuStore';
-  import { computed } from 'vue';
   import { defineProps } from 'vue';
 
   const dataStore = useDataStore(); 
-
-  const isBasketFull = computed(() => {
-    return dataStore.basket[0];
-  });
 
   const props = defineProps<{
     nameOfSection: string;
@@ -47,6 +42,10 @@
   const handleClose = () => {
     emit('close');
   };
+
+  const clearStore = () => {
+    return dataStore.clearBasket();
+  }
 </script>
 
 <style scoped>

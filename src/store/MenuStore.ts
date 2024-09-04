@@ -293,6 +293,10 @@ export const useDataStore = defineStore('data', {
       }
     },
 
+    clearBasket() {
+      this.basket = [] as BasketItem[];
+    },
+
     parseBasketItems() {
       return this.basket;
     },

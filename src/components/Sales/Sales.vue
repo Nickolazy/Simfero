@@ -17,7 +17,8 @@
           <SalesitemMain 
             v-for="sale in sales" 
             :key="sale.id"
-            :sale="sale" 
+            :sale="sale"
+            :menuItem="sale"
           />
         </div>
         <button class="scroll-button right" @click="scrollRight">

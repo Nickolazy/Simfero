@@ -42,7 +42,16 @@ const router = createRouter({
       path: '/store',
       name: 'store',
       component: () => import('@/components/Store/Store.vue')
-    }
+    },
+    {
+      path: '/:productName',
+      name: 'product-page',
+      component: () => import('@/components/ItemsOfMenu/ProductCard.vue'),
+      props: route => ({
+        productName: route.params.productName,
+        productId: route.query.productId
+      })
+    },
   ]
 })
 

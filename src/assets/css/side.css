@@ -226,7 +226,8 @@
 }
 
 .basket-rect {
-
+  -webkit-user-select: none; 
+  user-select: none;
 }
 
 .basket-side {
@@ -236,7 +237,25 @@
 
 .basket-side-img {
   width: 400px;
+  height: 300px;
 
+  position: relative;
+
+  -webkit-user-select: none; 
+  user-select: none;
+}
+
+.basket-side-img::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+
+  border-radius: 35px;
 }
 
 .basket-side-img img {
@@ -263,6 +282,9 @@
   display: flex;
   align-items: center;
   gap: 70px;
+
+  -webkit-user-select: none; 
+  user-select: none;
 }
 
 .basket-side-price {
@@ -285,4 +307,285 @@
 
   font-size: 30px;
   font-weight: 600;
+}
+
+/* Продуктовая карточка */
+.container-card {
+  max-width: 1920px;
+  max-height: 100vh;
+  margin-inline: auto;
+  padding-inline: 0px;
+
+  position: relative;
+  display: flex;
+}
+
+.icons-card {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+  z-index: 100;
+}
+
+.icons-card-back {
+  width: 80px;
+
+  margin-left: 70px;
+}
+
+.button-card-back:hover,
+.button-card-store:hover {
+  transform: scale(1);
+}
+
+.button-card-back:hover,
+.button-card-back:active {
+  transform: scale(1.05);
+}
+
+.icons-card-store {
+  width: 30px;
+
+  margin-right: 70px;
+}
+
+.container-img-card {
+  width: 50%;
+  height: 100vh;
+
+  display: flex;
+  position: relative;
+  z-index: 0;
+}
+
+.container-img-card img {
+  flex: 1;
+  width: auto;
+}
+
+.container-img-card::after {
+  width: 132.5%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.container-description-card {
+  width: 50%;
+  height: 100vh;
+  background-color: var(--color-white);
+
+  position: relative;
+  z-index: 10;
+
+  border-radius: 50px 0px 0px 50px;
+}
+
+.container-description-card-flex {
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-flex-width {
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 30px;
+}
+
+.description-category {
+  font-size: 30px;
+  color: #B8B8B8;
+
+  margin: 0;
+}
+
+.description-title {
+  font-size: 60px;
+}
+
+.composition-container {
+  padding-inline-start: 25px;
+
+  color: #D99665;
+  background-color: #EEA73421;
+  border: 1px solid #D99665;
+  border-radius: 15px;
+
+  font-size: 26px;
+}
+
+.icons-description-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  margin: 0;
+  margin-left: -40px;
+
+}
+
+.description-list {
+  display: flex;
+  align-items: center;
+
+  column-gap: 45px;
+}
+
+.description-list-item {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.description-list-item img {
+  height: 65px;
+}
+
+.description-list-item-time {
+  display: flex;
+  align-items: center;
+}
+
+.description-list-item-mark {
+  width: 12%;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-white);
+  background-color: var(--color-yellow);
+  border-radius: 15px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.description-product-card {
+  font-size: 24px;
+
+  color: #868686;
+
+}
+
+.description-card-last {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-card-cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  gap: 15px;
+}
+
+.description-card-cost img{
+  height: 65px;
+}
+
+.item-button-add-card {
+  width: 45%;
+  height: auto;
+
+  padding: 15px 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 25px;
+  color: var(--color-white);
+  background-color: var(--color-darkGray);
+
+  border-radius: 35px;
+  -webkit-user-select: none; 
+  user-select: none;
+}
+
+.item-button-add-card:hover {
+  transform: scale(1.05);
+}
+
+.item-button-add-card:active {
+  transform: scale(1.05);
+}
+
+.rect-card {
+  position: absolute;
+  top: -5px;
+  right: 60px;
+}
+
+.amount-card {
+  max-width: 45%;
+}
+
+/* Бизнес Ланч */
+.businessLunch-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 30px;
+}
+
+.businessLunch-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  position: relative;
+}
+
+.businessLunch-menu-day {
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.underline {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #D2AF96;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu-chosen-day .underline {
+  width: 100%;
+}
+
+.container-day-menu {
+  margin-top: 50px;
 }

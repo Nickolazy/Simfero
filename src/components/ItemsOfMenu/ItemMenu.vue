@@ -1,6 +1,6 @@
 <template>
   <div class="container-menu-item">
-    <button class="menu-item-margin">
+    <button @click="goToProductCard" class="menu-item-margin">
       <SaleBlock v-if="menuItem.sale > 0" 
         class="sales-item-sale"
         :sale="menuItem"/>
@@ -25,15 +25,15 @@
           </p>
           {{ splitedComposition }}
         </div>
-        <button v-if="amount === 0" @click="addItem" class="menu-item-button-add menu-item-buttons">
+        <button v-if="amount === 0" @click.stop="addItem" class="menu-item-button-add menu-item-buttons">
           Добавить
         </button>
         <div v-else class="menu-item-buttons-amount">
-          <button @click="removeItem" class="menu-item-button menu-item-buttons">
+          <button @click.stop="removeItem" class="menu-item-button menu-item-buttons">
             <img src="@/assets/svg/minus.svg" alt="Minus">
           </button>
           <span>{{ amount }}</span>
-          <button @click="addItem" class="menu-item-button menu-item-buttons">
+          <button @click.stop="addItem" class="menu-item-button menu-item-buttons">
             <img src="@/assets/svg/plus.svg" alt="Plus">
           </button>
         </div>
@@ -43,9 +43,10 @@
 </template>
 
 <script setup lang="ts">
-  import SaleBlock from './Sales/SaleBlock.vue';
+  import SaleBlock from '../Sales/SaleBlock.vue';
   import { defineProps, computed, ref } from 'vue';
   import { useDataStore } from '@/store/MenuStore';
+  import { useRouter } from 'vue-router';
 
   interface MenuItem {
     id: number,
@@ -61,9 +62,11 @@
     img: string;
   }
 
-  const dataStore = useDataStore();
+  const datastore = useDataStore();
+  const router = useRouter();
+
   const amount = computed(() => {
-    const basketItem = dataStore.basket.find(item => item.id === menuItem.id);
+    const basketItem = datastore.basket.find(item => item.id === menuItem.id);
     return basketItem ? basketItem.amount : 0;
   });
 
@@ -78,7 +81,7 @@
   });
 
   const addItem = () => {
-    dataStore.addToBasket({
+    datastore.addToBasket({
       id: menuItem.id,
       name: menuItem.name,
       composition: menuItem.composition,
@@ -89,9 +92,20 @@
   }
 
   const removeItem = () => {
-    dataStore.removeFromBasket(menuItem.id);
+    datastore.removeFromBasket(menuItem.id);
   }
 
+  const goToProductCard = () => {
+    router.push({
+      name: 'product-page', 
+      params: { 
+        productName: props.menuItem.name,
+      },
+      query: {
+        productId: props.menuItem.id.toString()
+      }
+    });
+  }
 
 </script>
 

@@ -21,7 +21,7 @@
   import Categories from './Categories/Categories.vue';
   import Sales from './Sales/Sales.vue';
   import BusinessLunch from './BusinessLunch/BusinessLunch.vue';
-  import Recomendations from './Recomendations.vue';
+  import Recomendations from './ItemsOfMenu/Recomendations.vue';
 
   const helloOpened = ref(false);
 

@@ -17,7 +17,7 @@
   
 <script setup lang="ts">
   import HeaderSide from '../HeaderSide.vue';
-  import ItemMenu from '../ItemMenu.vue';
+  import ItemMenu from '../ItemsOfMenu/ItemMenu.vue';
   import { useRouter } from 'vue-router';
   import { useDataStore } from '@/store/MenuStore';
   import { defineProps, computed } from 'vue';
@@ -30,6 +30,9 @@
     categoryPath: string;
     categoryName: string;
   }>();
+
+  // Так как нет продуктов для всех категорий, было решено 
+  // закоментировать функцию фильтрации по категориям
 
   // const filteredMenuItems = computed(() => {
   //   return menuItems.filter(item => item.category === props.categoryName);

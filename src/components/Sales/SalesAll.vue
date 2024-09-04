@@ -16,7 +16,7 @@
   
 <script setup lang="ts">
   import HeaderSide from '../HeaderSide.vue';
-  import itemMenu from '../ItemMenu.vue';
+  import itemMenu from '../ItemsOfMenu/ItemMenu.vue';
   import { computed } from 'vue';
   import { useRouter } from 'vue-router';
   import { useDataStore } from '@/store/MenuStore';

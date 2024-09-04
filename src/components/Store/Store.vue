@@ -23,7 +23,7 @@
           </p>
         </div>
       </div>
-      <div class="all-price-store-list">
+      <div v-if="isBasketFull" class="all-price-store-list">
         <StoreItem 
           v-for="menuItem in storeItems"
           :key="menuItem.id"
@@ -47,6 +47,10 @@
   const handleClose = () => {
     router.back();
   };
+
+  const isBasketFull = computed(() => {
+    return dataStore.basket[0];
+  });
 
   const storeItems = dataStore.parseBasketItems();
   const totalAmount = computed(() => {

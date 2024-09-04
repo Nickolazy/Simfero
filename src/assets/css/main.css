@@ -603,6 +603,8 @@
     background-color: var(--color-darkGray);
 
     border-radius: 35px;
+    -webkit-user-select: none; 
+    user-select: none;
   }
 
   .menu-item-buttons-amount {
@@ -614,6 +616,8 @@
 
     font-size: 30px;
     font-weight: 600;
+    -webkit-user-select: none; 
+    user-select: none;
   }
 
   .menu-item-button {
@@ -626,6 +630,8 @@
 
     background-color: var(--color-lightGray);
     border-radius: 50px;
+    -webkit-user-select: none; 
+    user-select: none;
   }
 
   .menu-item-buttons:hover {
