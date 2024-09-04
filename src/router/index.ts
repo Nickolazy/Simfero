@@ -34,6 +34,14 @@ const router = createRouter({
       component: () => import('@/components/BusinessLunch/BusinessLunchAll.vue')
     },
     {
+      path: '/businessLunch',
+      name: 'businessLunch',
+      component: () => import('@/components/BusinessLunch/BusinessLunchAll.vue'),
+      props: route => ({
+        day: route.params.day
+      })
+    },
+    {
       path: '/search',
       name: 'search',
       component: () => import('@/components/Search.vue')
@@ -52,7 +60,10 @@ const router = createRouter({
         productId: route.query.productId
       })
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 })
 
 export default router

@@ -57,7 +57,7 @@
                 <img src="@/assets/svg/icons/icon-cost-store.svg" alt="Price">
                 {{ menuItem.cost }} руб.
               </div>
-              <button v-if="!isBasketFull" @click="addItem" class="item-button-add-card">
+              <button v-if="!isBasketHaveItem" @click="addItem" class="item-button-add-card">
                 Добавить
               </button>
               <div v-else class="menu-item-buttons-amount amount-card">
@@ -134,6 +134,10 @@
       basketItem = datastore.basket.find(item => item.id === menuItem.id);
     }
     return basketItem ? basketItem.amount : 0;
+  });
+
+  const isBasketHaveItem = computed(() => {
+    return datastore.basket.some(item => item.id === productId);
   });
 
   const isBasketFull = computed(() => {

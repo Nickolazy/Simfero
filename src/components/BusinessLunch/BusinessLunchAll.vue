@@ -42,6 +42,8 @@
 
   const selectDay = (day: string) => {
     chosenDay.value = day;
+
+    console.log(chosenDay);
   };
 </script>
   
