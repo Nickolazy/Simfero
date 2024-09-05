@@ -16,15 +16,18 @@
         </button>
       </div>
 
-      <div v-if="searchQuery.length && filteredItems.length" class="search-results">
+      <div v-if="searchQuery.length && filteredItems.length" class="search-results recommended-items item-search">
         <SearchItem 
           v-for="menuItem in filteredItems"
           :key="menuItem.id"
-          :menuItem="menuItem"/>
+          :menuItem="menuItem"
+          :firstItem="firstItem"/>
       </div>
 
       <div v-if="searchQuery.length && !filteredItems.length" class="no-results">
-        Ничего не найдено
+        <p>
+          Ничего не найдено
+        </p>
       </div>
 
       <div v-else-if="!searchQuery.length" class="recommended-items">
@@ -34,7 +37,9 @@
         <SearchItem 
             v-for="menuItem in recommendedItems"
             :key="menuItem.id"
-            :menuItem="menuItem"/>
+            :menuItem="menuItem"
+            :firstItem="firstItem"
+            class="item-search"/>
         </div>
     </div>
   </section>
@@ -59,14 +64,16 @@
   const searchQuery = ref('');
   const recommendedItems = computed(() => menuItems.slice(0, 3));
 
-  // Фильтрация товаров, которые начинаются с введенного запроса
   const filteredItems = computed(() => {
     return menuItems.filter(item =>
       item.name.toLowerCase().startsWith(searchQuery.value.toLowerCase())
     );
   });
 
-  // Функция для обработки поиска
+  const firstItem = computed(() => {
+    return filteredItems.value.length ? filteredItems.value[0] : null;
+  });
+
   const searchItems = () => {
     if (!searchQuery.value) {
       console.log('Введите что-нибудь для поиска.');

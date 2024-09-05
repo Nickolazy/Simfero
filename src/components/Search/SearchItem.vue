@@ -1,18 +1,23 @@
 <template>
   <div v-if="menuItem" class="basket">
-    <img v-if="menuItem.id !== dataStore.basket[0]?.id" class="basket-rect" src="@/assets/svg/store-rect.svg" />
+    <img v-if="menuItem.id !== firstItem?.id" class="basket-rect" src="@/assets/svg/store-rect.svg" />
     <div @click="goToProductCard" class="basket-side">
       <div class="basket-side-img">
         <img class="" :src="menuItem.img" alt="Menu Position Photo">
       </div>
       <div>
         <div class="basket-side-text">
-          <p class="basket-side-title">
+          <p class="title-search">
             {{ menuItem.name }}
           </p>
           <p class="basket-side-composition">
             {{ splitedComposition }}
           </p>
+        </div>
+        <div class="icon-cost">
+          <img src="@/assets/svg/icons/icon-cost-store.svg" alt="Price">
+
+          {{ menuItem.cost }}
         </div>
       </div>
     </div>
@@ -31,11 +36,13 @@
     id: number;
     name: string;
     composition: string;
+    cost: number;
     img: string;
   }
 
   const props = defineProps<{
     menuItem: MenuItem | null;
+    firstItem: MenuItem | null;
   }>();
 
   const dataStore = useDataStore();
