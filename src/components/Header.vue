@@ -7,7 +7,7 @@
 
       <ul class="header-list">
         <li class="header-item">
-          <button class="button-header">
+          <button @click="openSearch" class="button-header">
             <img src="@/assets/svg/icons/icon-search.svg" alt="Search">
           </button>
         </li>
@@ -40,6 +40,10 @@
 
   const openStore = () => {
     router.push({ name: 'store' });
+  }
+
+  const openSearch = () => {
+    router.push({ name: 'search' });
   }
 </script>
   

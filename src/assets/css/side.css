@@ -649,3 +649,73 @@
   flex-wrap: wrap;
   gap: 30px;
 }
+
+/* Поиск */
+.container-search {
+  padding-bottom: 70px;
+
+
+}
+.search-section {
+  margin-top: -35px;
+
+  color: var(--color-white);
+  background-color: var(--color-darkGray);
+}
+
+.search-title {
+  padding-top: 30px;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.search-button-input-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+.search-input {
+  width: 80%;
+
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 40px;
+  margin-bottom: 10px;
+
+}
+
+.search-button {
+  width: 40px;
+  height: auto;
+
+  position: absolute;
+  right: 10%;
+
+  cursor: pointer;
+}
+
+.search-results ul, .recommended-items ul {
+  list-style: none;
+  padding: 0;
+}
+
+.no-results {
+
+  color: #868686;
+  font-size: 24px;
+
+  height: 72.1vh;
+}
+
+.recommended-items h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}

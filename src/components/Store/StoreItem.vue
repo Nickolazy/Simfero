@@ -78,8 +78,6 @@
     dataStore.removeFromBasket(menuItem.id);
   }
 
-  
-
 </script>
   
 <style scoped>
